@@ -10,11 +10,15 @@ export class MoviesIndexComponent implements OnInit {
   popularMovies: Array<Object>;
   topRatedMovies: Array<Object>;
   upComingMovies: Array<Object>;
-  latestMovies: Array<Object>;
+  nowPlayingMovies: Array<Object>;
   searchQuery: string;
   searchResult: Array<Object> = [];
 
-  constructor(private moviesService: MoviesThemoviedbService) { }
+  constructor(
+    private moviesService: MoviesThemoviedbService
+  ) { 
+
+  }
 
   ngOnInit() {
 
@@ -23,6 +27,7 @@ export class MoviesIndexComponent implements OnInit {
     this.moviesService.getPopularMovies()
       .subscribe(
         response => {
+          console.log('PopularMovies')
           console.log(response.results)
           this.popularMovies = response.results;
         })
@@ -30,6 +35,7 @@ export class MoviesIndexComponent implements OnInit {
     this.moviesService.getTopRatedMovies()
       .subscribe(
         response => {
+          console.log('TopRatedMovies')
           console.log(response.results)
           this.topRatedMovies = response.results;
         })
@@ -37,21 +43,24 @@ export class MoviesIndexComponent implements OnInit {
     this.moviesService.getUpComingMovies()
       .subscribe(
         response => {
+          console.log('UpComingMovies')
           console.log(response.results)
           this.upComingMovies = response.results;
         })
 
-    this.moviesService.getLatestMovies()
+    this.moviesService.getNowPlayingMovies()
       .subscribe(
         response => {
+          console.log('NowPlayingMovies')
           console.log(response.results)
-          this.latestMovies = response.results;
+          this.nowPlayingMovies = response.results;
         })
   }
 
   searchMovies() {
     this.moviesService.searchMovies(this.searchQuery)
       .subscribe(response => {
+        console.log('searchMovies')
         console.log(response.results)
         this.searchResult = response.results;
       })

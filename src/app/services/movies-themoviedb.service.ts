@@ -7,7 +7,7 @@ export class MoviesThemoviedbService {
   apikey = '&api_key=0324eb4b8130330ff1662244a7f60777';
   baseUrl = 'https://api.themoviedb.org/3/';
   movie = 'movie/'
-  popularMovies = '&sort_by=popularity.desc';
+  sortByPopularity = '&sort_by=popularity.desc';
   jsonpCallback = '?callback=JSONP_CALLBACK';
 
   constructor(private jsonp: Jsonp) {
@@ -30,13 +30,13 @@ export class MoviesThemoviedbService {
       .map(result => result.json())
   }
 
-  getLatestMovies() {
-    return this.jsonp.get(this.baseUrl + this.movie + 'latest' + this.jsonpCallback + this.apikey)
+  getNowPlayingMovies() {
+    return this.jsonp.get(this.baseUrl + this.movie + 'now_playing' + this.jsonpCallback + this.apikey)
       .map(result => result.json())
   }
 
   searchMovies(query) {
-    return this.jsonp.get(this.baseUrl + 'search/movie' + this.jsonpCallback + '&query=' + query + this.popularMovies + this.apikey)
+    return this.jsonp.get(this.baseUrl + 'search/movie' + this.jsonpCallback + '&query=' + query + this.sortByPopularity + this.apikey)
       .map(result => result.json())
   }
 

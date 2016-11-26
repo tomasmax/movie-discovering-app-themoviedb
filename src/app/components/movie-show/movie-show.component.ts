@@ -8,33 +8,35 @@ import {Router, ActivatedRoute} from '@angular/router'
   styleUrls: ['./movie-show.component.scss']
 })
 export class MovieShowComponent implements OnInit {
+  similarMovies: Array<Object> = [];
   movie: any = {};
-  similarMovies: Array<Object>;
 
-  constructor(private moviesService: MoviesThemoviedbService, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private moviesService: MoviesThemoviedbService, 
+    private route: ActivatedRoute
+  ) { 
+
+  }
 
   ngOnInit() {
-    this.activatedRoute.params
-      .map(params => params['id'])
-      .subscribe( id =>{
-        console.log(id)
-        this.moviesService.getMovieDetails(id)
-          .subscribe(result => {
-            console.log(result)
-            this.movie = result
-          })
-      })
 
-      this.activatedRoute.params
+    this.route.params
       .map(params => params['id'])
-      .subscribe( id =>{
-        console.log(id)
-        this.moviesService.getSimilarMovies(id)
-          .subscribe(response => {
-            console.log(response)
-            this.similarMovies = response.results
-          })
-      })
+      .switchMap(id => this.moviesService.getMovieDetails(id))
+      .subscribe(result => this.movie = result);
+
+    this.route.params
+      .map(params => params['id'])
+      .switchMap(id => this.moviesService.getSimilarMovies(id))
+      .subscribe(response => this.similarMovies = response.results);
+
+    // this.moviesService
+    //     .getSimilarMovies(this.route.snapshot.params['id'])
+    //     .subscribe(response => {
+    //       console.log('this.moviesService.getSimilarMovies')
+    //       console.log(response.results)
+    //       this.similarMovies = response.results
+    //     });
   }
 
 }
