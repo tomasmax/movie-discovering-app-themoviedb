@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesThemoviedbService } from '../../services/movies-themoviedb.service'
 
 @Component({
-  selector: 'app-movies',
+  selector: 'movies',
   templateUrl: './movies-index.component.html',
   styleUrls: ['./movies-index.component.scss']
 })
