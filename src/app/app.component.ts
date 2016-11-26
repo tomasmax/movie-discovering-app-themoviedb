@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Http, Jsonp } from "@angular/http";
+import { MoviesThemoviedbService } from './services/movies-themoviedb.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  constructor(private http: Http, private movieService: MoviesThemoviedbService, private jsonp: Jsonp){}
 }
