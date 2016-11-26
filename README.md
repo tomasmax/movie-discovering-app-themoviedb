@@ -1,6 +1,14 @@
-# MovieDiscoveringAppThemoviedb
+# Movie Discovering App Themoviedb
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
+
+It is powered by The Movie DB and is developed using Angular2.
+
+You need to have installed node and npm. Go to the terminal over project folder and run:
+
+$npm install
+
+To install all the dependecies.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
