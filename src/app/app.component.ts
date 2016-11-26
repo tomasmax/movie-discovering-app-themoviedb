@@ -8,7 +8,7 @@ import { MoviesThemoviedbService } from './services/movies-themoviedb.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Discover New Movies';
 
   constructor(private http: Http, private movieService: MoviesThemoviedbService, private jsonp: Jsonp){}
 }

@@ -22,6 +22,8 @@
         "public/vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss"
       ],
       "scripts": [
+        "public/vendor/jquery/jquery.min.js",
+        "public/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

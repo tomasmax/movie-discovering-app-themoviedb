@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Fix bootstrap fixed navbar overlapping */
+body { padding-top: 70px; }
+
+@media screen and (max-width: 768px) {
+    body { padding-top: 30px; }
+}
