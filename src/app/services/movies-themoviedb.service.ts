@@ -15,32 +15,32 @@ export class MoviesThemoviedbService {
     console.log('MoviesThemoviedbService started')
   }
 
-  getPopular() {
+  getPopularMovies() {
     return this.jsonp.get(this.baseUrl + this.movie + 'popular' + this.jsonpCallback + this.apikey)
       .map(result => result.json())
   }
 
-  getTopRated() {
+  getTopRatedMovies() {
     return this.jsonp.get(this.baseUrl + this.movie + 'top_rated' + this.jsonpCallback + this.apikey)
       .map(result => result.json())
   }
 
-  getUpComing() {
+  getUpComingMovies() {
     return this.jsonp.get(this.baseUrl + this.movie + 'upcoming' + this.jsonpCallback + this.apikey)
       .map(result => result.json())
   }
 
-  getLatest() {
+  getLatestMovies() {
     return this.jsonp.get(this.baseUrl + this.movie + 'latest' + this.jsonpCallback + this.apikey)
       .map(result => result.json())
   }
 
-  searchMovie(searchStr) {
-    return this.jsonp.get(this.baseUrl + 'search/movie' + this.jsonpCallback + '&query=' + searchStr + this.popularMovies + this.apikey)
+  searchMovies(query) {
+    return this.jsonp.get(this.baseUrl + 'search/movie' + this.jsonpCallback + '&query=' + query + this.popularMovies + this.apikey)
       .map(result => result.json())
   }
 
-  movieDetails(id) {
+  getMovieDetails(id) {
     return this.jsonp.get(this.baseUrl + this.movie + id + this.jsonpCallback + this.apikey)
       .map(result => result.json())
   }
