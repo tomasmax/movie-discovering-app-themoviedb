@@ -14,7 +14,7 @@ export class MovieShowComponent implements OnInit {
   constructor(
     private moviesService: MoviesThemoviedbService, 
     private route: ActivatedRoute
-  ) { 
+  ) {
 
   }
 

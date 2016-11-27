@@ -25,27 +25,7 @@
   </div>
 </div>
 
-<div *ngIf="moviesService.sharedSearchResult.length > 0">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3>Search Results</h3>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div *ngFor="let movie of moviesService.sharedSearchResult, let i = index">
-          <div class="col-md-2 text-center arrange">
-            <a href="#" routerLink="/movie/{{movie.id}}" >
-              <img *ngIf="movie.poster_path" class="img-thumbnail" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}">
-              <img *ngIf="!movie.poster_path" class="img-thumbnail" src="http://http://ddbu.billiardport.com/img/posters/no_poster_available.jpg">
-            </a>
-            <h4 class="text-center">{{movie.title}}</h4>
-            <p class="text-center"><strong>Rating: </strong>{{movie.vote_average}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<movies-search-result> </movies-search-result>
 
 <div class="panel panel-default">
   <div class="panel-heading">
