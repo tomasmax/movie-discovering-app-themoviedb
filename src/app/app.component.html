@@ -20,7 +20,7 @@
       </ul>
       <form (submit)="searchMoviesNavBar()" action="#" class="navbar-form navbar-left">
         <div class="form-group">
-          <input name="searchQuery" type="text" class="form-control" placeholder="Type movie title..." autocomplete="off" [(ngModel)]="searchQueryNavBar" (keyup)=autocompleteSearchMoviesNavBar()>
+          <input name="searchQuery" type="text" class="form-control" placeholder="Movie title (min 3 letters)..." autocomplete="off" [(ngModel)]="searchQueryNavBar" (keyup)=autocompleteSearchMoviesNavBar()>
         </div>
         <button type="submit" class="btn btn-default">Search</button>
         <div class="suggestions suggestions-nav-bar" *ngIf="autocompleteMoviesNavBar.length > 0">
