@@ -9,6 +9,11 @@
       <div class="row">
 
         <div class="col-md-6">
+          <img *ngIf="movie.poster_path" class="img-thumbnail" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <img *ngIf="!movie.poster_path" class="img-thumbnail" src="http://ddbu.billiardport.com/img/posters/no_poster_available.jpg">
+        </div>
+
+        <div class="col-md-6">
           <ul class="list-group">
             <li class="list-group-item">
               <strong>Original Title:</strong> {{movie.original_title}}
@@ -36,11 +41,6 @@
           <hr />
 
           <a *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank" class="btn btn-primary btn-lg btn-block">Movie Homepage</a>
-        </div>
-
-        <div class="col-md-6">
-          <img *ngIf="movie.poster_path" class="img-thumbnail" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
-          <img *ngIf="!movie.poster_path" class="img-thumbnail" src="http://ddbu.billiardport.com/img/posters/no_poster_available.jpg">
         </div>
       </div>
     </div>

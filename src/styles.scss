@@ -5,10 +5,6 @@ $suggestions-background-color: #f1f1f1;
 /* Fix bootstrap fixed navbar overlapping */
 body { padding-top: 70px; }
 
-@media screen and (max-width: 768px) {
-    body { padding-top: 30px; }
-}
-
 .search-button {
   margin-left: 4px!important;
 }
