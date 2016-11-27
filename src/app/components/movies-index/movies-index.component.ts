@@ -67,13 +67,18 @@ export class MoviesIndexComponent implements OnInit {
       })
   }
 
-    autocompleteSearchMovies() {
+  autocompleteSearchMovies() {
     this.moviesService.searchMovies(this.searchQuery)
       .subscribe(response => {
         console.log('searchMovies')
         console.log(response.results)
         this.autocompleteMovies = response.results;
       })
+  }
+
+  select(movie) {
+    this.searchQuery = movie;
+    this.autocompleteMovies = [];
   }
 
 }

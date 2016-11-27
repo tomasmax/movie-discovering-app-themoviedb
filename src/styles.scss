@@ -1,8 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
+$suggestions-background-color: #f1f1f1;
+
 /* Fix bootstrap fixed navbar overlapping */
 body { padding-top: 70px; }
 
 @media screen and (max-width: 768px) {
     body { padding-top: 30px; }
+}
+
+.suggestions{
+  border:solid 1px $suggestions-background-color;
+  position:absolute;
+  width:80%;
+  background: white;
+  z-index: 999;
+}
+
+.suggestions ul{
+  padding: 0px;
+  margin: 0px;
+}
+.suggestions ul li{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.suggestions ul li a{
+  padding:5px;
+  display: block;
+  text-decoration: none;
+  color:#7E7E7E;
+}
+
+.suggestions ul li a:hover{
+  background-color: $suggestions-background-color;
 }
