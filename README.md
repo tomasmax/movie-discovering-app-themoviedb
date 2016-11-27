@@ -2,9 +2,9 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
 
-It is powered by The Movie DB and is developed using Angular2.
+It is powered by The Movie DB and is developed using Angular2 + Bootstrap.
 
-You need to have installed node and npm. Go to the terminal over project folder and run:
+Supposing you have node and npm installed. Go to the this project folder and type in your terminal:
 
 $npm install
 
