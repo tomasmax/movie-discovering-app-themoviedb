@@ -13,6 +13,7 @@ export class MoviesIndexComponent implements OnInit {
   nowPlayingMovies: Array<Object>;
   searchQuery: string;
   searchResult: Array<Object> = [];
+  autocompleteMovies: Array<Object> = [];
 
   constructor(
     private moviesService: MoviesThemoviedbService
@@ -63,6 +64,15 @@ export class MoviesIndexComponent implements OnInit {
         console.log('searchMovies')
         console.log(response.results)
         this.searchResult = response.results;
+      })
+  }
+
+    autocompleteSearchMovies() {
+    this.moviesService.searchMovies(this.searchQuery)
+      .subscribe(response => {
+        console.log('searchMovies')
+        console.log(response.results)
+        this.autocompleteMovies = response.results;
       })
   }
 
