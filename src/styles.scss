@@ -9,6 +9,10 @@ body { padding-top: 70px; }
     body { padding-top: 30px; }
 }
 
+.search-button {
+  margin-left: 4px!important;
+}
+
 .suggestions{
   border:solid 1px $suggestions-background-color;
   position:absolute;
@@ -36,4 +40,8 @@ body { padding-top: 70px; }
 
 .suggestions ul li a:hover{
   background-color: $suggestions-background-color;
+}
+
+.suggestions-nav-bar{
+  width:246px;
 }

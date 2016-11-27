@@ -12,7 +12,6 @@ export class MoviesIndexComponent implements OnInit {
   upComingMovies: Array<Object>;
   nowPlayingMovies: Array<Object>;
   searchQuery: string;
-  searchResult: Array<Object> = [];
   autocompleteMovies: Array<Object> = [];
 
   constructor(
@@ -22,6 +21,8 @@ export class MoviesIndexComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    console.log('movies-index.component ngOnInit')
 
     //initialize all lists with data from themoviedb
 
@@ -63,17 +64,21 @@ export class MoviesIndexComponent implements OnInit {
       .subscribe(response => {
         console.log('searchMovies')
         console.log(response.results)
-        this.searchResult = response.results;
+        this.moviesService.setSharedSearchResult(response.results);
       })
   }
 
   autocompleteSearchMovies() {
-    this.moviesService.searchMovies(this.searchQuery)
-      .subscribe(response => {
-        console.log('searchMovies')
-        console.log(response.results)
-        this.autocompleteMovies = response.results;
-      })
+    if (this.searchQuery.length > 2) {
+      this.moviesService.searchMovies(this.searchQuery)
+        .subscribe(response => {
+          console.log('autocompleteSearchMovies')
+          console.log(response.results)
+          this.autocompleteMovies = response.results;
+        })
+    } else {
+      this.autocompleteMovies = [];
+    }
   }
 
   select(movie) {

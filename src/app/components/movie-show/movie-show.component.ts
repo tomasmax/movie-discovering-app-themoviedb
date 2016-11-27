@@ -8,8 +8,8 @@ import {Router, ActivatedRoute} from '@angular/router'
   styleUrls: ['./movie-show.component.scss']
 })
 export class MovieShowComponent implements OnInit {
-  similarMovies: Array<Object> = [];
-  movie: any = {};
+  private similarMovies: Array<Object> = [];
+  private movie: any = {};
 
   constructor(
     private moviesService: MoviesThemoviedbService, 
