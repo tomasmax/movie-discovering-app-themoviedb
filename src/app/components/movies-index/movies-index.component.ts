@@ -57,6 +57,8 @@ export class MoviesIndexComponent implements OnInit {
           console.log(response.results)
           this.nowPlayingMovies = response.results;
         })
+
+    this.moviesService.setSharedSearchResult([]);
   }
 
   searchMovies() {

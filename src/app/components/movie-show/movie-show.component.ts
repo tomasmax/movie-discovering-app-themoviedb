@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { MoviesThemoviedbService } from '../../services/movies-themoviedb.service'
 import {Router, ActivatedRoute} from '@angular/router'
 
@@ -29,6 +29,12 @@ export class MovieShowComponent implements OnInit {
       .map(params => params['id'])
       .switchMap(id => this.moviesService.getSimilarMovies(id))
       .subscribe(response => this.similarMovies = response.results);
+
+    this.route.params
+      .map(params => params['id'])
+      .subscribe(() => {this.moviesService.setSharedSearchResult([]); window.scrollTo(0,0);});
+
+    this.moviesService.setSharedSearchResult([]);
 
     // this.moviesService
     //     .getSimilarMovies(this.route.snapshot.params['id'])
